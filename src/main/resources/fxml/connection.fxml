@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadamart.ui.ConnectionController" styleClass="app-root,connection-root">
+  <left>
+    <VBox prefWidth="400" spacing="18" styleClass="connection-sidebar">
+      <padding><Insets top="40" right="44" bottom="32" left="44"/></padding>
+      <HBox spacing="12" alignment="CENTER_LEFT">
+        <ImageView fitWidth="260" fitHeight="86" preserveRatio="true">
+          <image><Image url="@/images/sada-mart-logo.png"/></image>
+        </ImageView>
+      </HBox>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Label text="Set up your&#10;store branch." wrapText="true" styleClass="connection-title"/>
+      <Label text="Configure your store branch details, register preferences, and secure store connection." wrapText="true" styleClass="connection-copy"/>
+      <VBox spacing="10" styleClass="connection-trust">
+        <Label text="PROTECTED STORE SYNC" styleClass="connection-eyebrow"/>
+        <Label text="Safe &amp; Verified Store Setup" styleClass="connection-trust-title"/>
+        <Label text="Your branch settings and daily register totals stay protected with automatic verification." wrapText="true" styleClass="connection-copy"/>
+      </VBox>
+      <Region VBox.vgrow="ALWAYS"/>
+      <HBox spacing="10">
+        <Button fx:id="backButton" text="←  Back to Sign In" onAction="#backToLogin" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="side-action"/>
+      </HBox>
+    </VBox>
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" styleClass="connection-workspace">
+      <content>
+        <VBox spacing="18" maxWidth="660" styleClass="connection-content">
+          <padding><Insets top="46" right="64" bottom="46" left="64"/></padding>
+          <HBox alignment="CENTER_LEFT" spacing="12">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                  <Label text="STORE PROFILE" styleClass="overline"/>
+                  <Label text="Store Details" styleClass="heading" wrapText="true"/>
+                  <Label text="Update your store details and manager access." wrapText="true" styleClass="subheading"/>
+            </VBox>
+            <Button fx:id="workspaceButton" text="Open Workspace  →" onAction="#openWorkspace" styleClass="secondary-button"/>
+          </HBox>
+          <VBox fx:id="formCard" spacing="15" styleClass="connection-form">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+              <Label text="Store Details" styleClass="section-title"/>
+              <Region HBox.hgrow="ALWAYS"/>
+              <CheckBox fx:id="tcpsToggle" text="Use secure connection" visible="false" managed="false" styleClass="login-check"/>
+            </HBox>
+            <VBox spacing="6">
+              <Label text="Active Store Branch Profile" styleClass="field-label"/>
+              <Label fx:id="jdbcPreview" text="SADA Mart Main Branch" visible="false" managed="false" styleClass="jdbc-pill"/>
+            </VBox>
+            <HBox spacing="14">
+              <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Store Name" styleClass="field-label"/>
+                <TextField fx:id="host" promptText="localhost or db.sadamart.internal"/>
+              </VBox>
+              <VBox spacing="6" prefWidth="130">
+                <Label text="Register Number" styleClass="field-label"/>
+                <TextField fx:id="port" text="1521"/>
+              </VBox>
+              <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Store Area" styleClass="field-label"/>
+                <TextField fx:id="service" promptText="FREEPDB1"/>
+              </VBox>
+            </HBox>
+            <Separator/>
+            <HBox spacing="14">
+              <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Manager Username" styleClass="field-label"/>
+                <TextField fx:id="username" promptText="Manager ID"/>
+              </VBox>
+              <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Manager Password" styleClass="field-label"/>
+                <PasswordField fx:id="password" promptText="Enter manager password"/>
+              </VBox>
+            </HBox>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+              <Button fx:id="testButton" text="Save Store Details  →" onAction="#testConnection" styleClass="primary-button"/>
+              <Button fx:id="clearButton" text="Clear password" onAction="#clearPassword" styleClass="secondary-button"/>
+              <ProgressIndicator fx:id="progress" visible="false" prefWidth="26" prefHeight="26"/>
+            </HBox>
+            <Label fx:id="status" text="Ready to verify store setup." wrapText="true" styleClass="status"/>
+          </VBox>
+          <HBox spacing="8" styleClass="connection-footnote">
+            <Label text="●" styleClass="status-accent"/>
+            <Label text="Your password is kept private and is used only to verify your access." wrapText="true" styleClass="muted"/>
+          </HBox>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>

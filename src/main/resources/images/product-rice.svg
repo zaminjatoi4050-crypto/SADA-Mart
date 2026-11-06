@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="150" viewBox="0 0 220 150">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f4ead1"/><stop offset="1" stop-color="#d8b36a"/></linearGradient><linearGradient id="pack" x2="0" y2="1"><stop stop-color="#fffdf4"/><stop offset="1" stop-color="#e7d19a"/></linearGradient></defs>
+<rect width="220" height="150" rx="18" fill="url(#bg)"/><ellipse cx="110" cy="132" rx="62" ry="8" fill="#b68e4d" opacity=".3"/>
+<path d="M75 22h70l8 102H67z" fill="url(#pack)" stroke="#b88a3d" stroke-width="2"/><path d="M70 53h80v31H70z" fill="#087f5b"/>
+<text x="110" y="46" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#174b3a">ROYAL</text><text x="110" y="74" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">BASMATI</text><text x="110" y="101" text-anchor="middle" font-family="Arial" font-size="10" fill="#604719">PREMIUM RICE</text><text x="110" y="117" text-anchor="middle" font-family="Arial" font-size="9" fill="#604719">5 KG</text>
+</svg>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadamart.ui.ShellController" styleClass="app-root">
+  <left>
+    <VBox fx:id="sidebar" prefWidth="258" minWidth="232" spacing="0" styleClass="sidebar">
+      <HBox spacing="12" alignment="CENTER_LEFT" styleClass="brand-row">
+        <ImageView fitWidth="210" fitHeight="70" preserveRatio="true">
+          <image><Image url="@/images/sada-mart-logo.png"/></image>
+        </ImageView>
+      </HBox>
+      <Label text="STORE MENU" styleClass="nav-heading"/>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="nav-scroll" VBox.vgrow="ALWAYS">
+        <content>
+          <VBox fx:id="navigation" spacing="4" styleClass="nav-items"/>
+        </content>
+      </ScrollPane>
+      <VBox spacing="9" styleClass="sidebar-bottom">
+        <HBox spacing="8">
+          <Button text="Sign Out" onAction="#signOut" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="side-action"/>
+        </HBox>
+      </VBox>
+    </VBox>
+  </left>
+  <center>
+    <VBox spacing="0" styleClass="main-area">
+      <HBox alignment="CENTER_LEFT" spacing="14" styleClass="topbar">
+        <VBox spacing="2">
+          <Label text="SADA MART  /  STORE WORKSPACE" styleClass="breadcrumb"/>
+          <Label fx:id="topTitle" text="Overview" styleClass="top-title"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="globalSearchField" onAction="#runGlobalSearch" promptText="Search your store" styleClass="global-search" prefWidth="250"/>
+        <Button text="⌕" onAction="#openCommandPalette" styleClass="icon-button" accessibleText="Search"/>
+        <Button text="♡" onAction="#openNotifications" styleClass="icon-button" accessibleText="Updates"/>
+        <Button fx:id="themeButton" text="☾  Dark mode" onAction="#toggleTheme" styleClass="top-action"/>
+        <Label fx:id="roleChip" text="STORE MANAGER" styleClass="dev-chip"/>
+        <VBox spacing="1" alignment="CENTER_RIGHT" styleClass="profile-block">
+          <Label fx:id="operatorNameLabel" text="Ayesha Siddiqui" styleClass="profile-name"/>
+          <Label text="Active Shift #112" styleClass="profile-role"/>
+        </VBox>
+        <Label fx:id="operatorAvatarLabel" text="AS" styleClass="profile-avatar"/>
+      </HBox>
+      <ScrollPane fx:id="contentScroll" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" styleClass="workspace-scroll">
+        <content>
+          <VBox fx:id="content" spacing="22" styleClass="content-area"/>
+        </content>
+      </ScrollPane>
+      <HBox spacing="14" alignment="CENTER_LEFT" styleClass="statusbar">
+        <Label text="●  STORE READY" styleClass="status-accent"/>
+        <Label fx:id="statusSummaryLabel" text="Sales, stock, and reports are ready"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="SADA MART  /  MAIN STORE"/>
+      </HBox>
+    </VBox>
+  </center>
+</BorderPane>

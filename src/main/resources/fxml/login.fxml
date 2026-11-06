@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadamart.ui.LoginController" styleClass="app-root,login-root">
+    <left>
+        <VBox fx:id="heroBox" prefWidth="420" spacing="18" styleClass="login-hero">
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="login-brand">
+                <ImageView fitWidth="230" fitHeight="72" preserveRatio="true">
+                    <image><Image url="@/images/sada-mart-logo.png"/></image>
+                </ImageView>
+            </HBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox spacing="18" styleClass="login-hero-copy">
+                <Label text="Everything your store needs,&#10;in one simple place." wrapText="true" styleClass="login-hero-title"/>
+                <Label text="Manage sales, stock, suppliers, customers, and daily performance from one simple workspace." wrapText="true" styleClass="login-hero-description"/>
+                <HBox spacing="12" styleClass="login-hero-stat-row">
+                    <VBox spacing="4" styleClass="login-hero-stat">
+                        <Label text="Easy" styleClass="login-stat-number"/>
+                        <Label text="TO USE" styleClass="login-stat-label"/>
+                    </VBox>
+                    <VBox spacing="4" styleClass="login-hero-stat">
+                        <Label text="Smart" styleClass="login-stat-number"/>
+                        <Label text="STOCK CONTROL" styleClass="login-stat-label"/>
+                    </VBox>
+                    <VBox spacing="4" styleClass="login-hero-stat">
+                        <Label text="Clear" styleClass="login-stat-number"/>
+                        <Label text="STORE REPORTS" styleClass="login-stat-label"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="●" styleClass="status-accent"/>
+                <Label text="SADA MART  ·  MAIN RETAIL BRANCH" styleClass="login-footer"/>
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <StackPane styleClass="login-panel">
+            <VBox fx:id="cardBox" maxWidth="440" maxHeight="560" spacing="16" styleClass="login-card">
+                <VBox spacing="6">
+                    <Label text="WELCOME BACK" styleClass="overline"/>
+                    <Label text="Sign in to your store" styleClass="login-title"/>
+                    <Label text="Enter your details to open your store workspace." wrapText="true" styleClass="login-subtitle"/>
+                </VBox>
+                <VBox spacing="7">
+                    <Label text="Operator username" styleClass="field-label"/>
+                    <TextField fx:id="username" promptText="Enter username" styleClass="login-input"/>
+                </VBox>
+                <VBox spacing="7">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="Password" styleClass="field-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Hyperlink text="Forgot password?" onAction="#forgotPassword" styleClass="login-link"/>
+                    </HBox>
+                    <PasswordField fx:id="password" promptText="Enter password" onAction="#signIn" styleClass="login-input"/>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" spacing="8">
+                    <Label text="● Secure sign-in" styleClass="login-protected"/>
+                </HBox>
+                <Button fx:id="signInButton" text="Sign in to Workspace  →" onAction="#signIn" maxWidth="Infinity" styleClass="primary-button"/>
+                <Label fx:id="status" text="Enter your details to continue." wrapText="true" styleClass="login-status"/>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
